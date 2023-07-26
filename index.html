@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+        <title>Fast Fingers</title>
+        <link href = "https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel = "stylesheet">
+        <script src = "https://kit.fontawesome.com/fffd17f093.js" crossorigin = "anonymous"></script>
+        <link rel = "stylesheet" href = "./style/container.css">
+        <link rel = "stylesheet" href = "./style/keyboard.css">
+        <link rel = "stylesheet" href = "./style/game.css">
+        <!-- <audio >
+            <source src="horse.ogg" type="audio/ogg">
+            <source src="./assets/sounds/wrong-47985_OOaAGXbm.mp3" type="audio/mpeg" id = "myAudio">
+            Your browser does not support the audio element.
+          </audio>
+        <source src="./assets/sounds/wrong-47985_OOaAGXbm.mp3" type="audio" id = "myAudio"> -->
+    </head>
+    <body id = "body">
+        <main>
+            <div class = "container" >
+                <div id = "menu"  class = "center" style = "display: block">
+                    <h2>Fast<span>Fingers</span></h2>
+                    <button id = "play" type = "button">Play</button>
+                </div>
+                <div id = "choose" class = "choose" style = "display: none">
+                    <h3>Typing in Armenian</h3>
+                    <button id = "training" type = "button">Training</button> <br>
+                    <button id = "typing" type = "button">Typing</button> <br>
+                </div>
+                <div id = "count-down" style = "display: none">
+                    <h1 id = "start-count">3</h1>
+                </div>
+                <div id = "finalScore" style = "display: none">
+                    <h1 id = "start-count">3</h1>
+                </div>
+                <figure>
+                    <img id = "figure-jumping" src = "./assets/img/img.png" style = "display: block">
+                </figure>
+                <div class = "keyboard" id = "keyboard" style = "display: none">
+                    <button class = "goToMenu" id = "goToMenu" type = "button">&#8656; Go To Menu</button>
+                    <h3 id = "trainYourFingers">Train your fingers</h3> 
+                    <ul class = "row row-0">
+                        <li class = "pinky1" id = "Backquote">՝</li>
+                        <li class = "pinky1" id = "Digit1">Է</li>
+                        <li class = "ring1" id = "Digit2">Թ</li>
+                        <li class = "middle1" id = "Digit3">Փ</li>
+                        <li class = "pointer1st" id = "Digit4">Ձ</li>
+                        <li class = "pointer1st" id = "Digit5">Ջ</li>
+                        <li class = "pointer2nd" id = "Digit6">ւ</li>
+                        <li class = "pointer2nd" id = "Digit7">և</li>
+                        <li class = "middle2" id = "Digit8">Ր</li>
+                        <li class = "ring2" id = "Digit9">Չ</li>
+                        <li class = "pinky2" id = "Digit0">Ճ</li>
+                        <li class = "pinky2" id = "Minus">-</li>
+                        <li class = "pinky2" id = "Equal">Ժ</li>
+                        <li class = "pinky2" id = "Backspace">DELETE</li>
+                    </ul>
+                    <ul class  = "row row-1">
+                        <li class = "pinky1" id = "Tab">TAB</li>
+                        <li class = "pinky1" id = "KeyQ">Ք</li>
+                        <li class = "ring1" id = "KeyW">Ո</li>
+                        <li class = "middle1" id = "KeyE">Ե</li>
+                        <li class = "pointer1st" id = "KeyR">Ռ</li>
+                        <li class = "pointer1st" id = "KeyT">Տ</li>
+                        <li class = "pointer2nd" id = "KeyY">Ը</li>
+                        <li class = "pointer2nd" id = "KeyU">ւ</li>
+                        <li class = "middle2" id = "KeyI">Ի</li>
+                        <li class = "ring2" id = "KeyO">Օ</li>
+                        <li class = "pinky2" id = "KeyP">Պ</li>
+                        <li class = "pinky2" id = "BracketLeft">Խ</li>
+                        <li class = "pinky2" id = "BracketRight">Ծ</li>
+                        <li class = "pinky2" id = "Backslash">՚</li>
+                    </ul>
+                    <ul class = "row row-2">
+                        <li class = "pinky1" id = "CapsLock">CAPS</li>
+                        <li class = "pinky1" id = "KeyA">Ա</li>
+                        <li class = "ring1" id = "KeyS">Ս</li>
+                        <li class = "middle1" id = "KeyD">Դ</li>
+                        <li class = "pointer1st" id = "KeyF">Ֆ</li>
+                        <li class = "pointer1st" id = "KeyG">Գ</li>
+                        <li class = "pointer2nd" id = "KeyH">Հ</li>
+                        <li class = "pointer2nd" id = "KeyJ">Յ</li>
+                        <li class = "middle2" id = "KeyK">Կ</li>
+                        <li class = "ring2" id = "KeyL">Լ</li>
+                        <li class = "pinky2" id = "Semicolon">;</li>
+                        <li class = "pinky2" id = "Quote">Շ</li>
+                        <li class = "pinky2" id = "Enter">RETURN</li>
+                    </ul> 
+                    <ul class = "row row-3">
+                        <li class = "pinky1" id =  "ShiftLeft">SHIFT</li>
+                        <li class = "pinky1" id = "KeyZ">Զ</li>
+                        <li class = "ring1" id = "KeyX">Ղ</li>
+                        <li class = "middle1" id = "KeyC">Ց</li>
+                        <li class = "pointer1st" id = "KeyV">Վ</li>
+                        <li class = "pointer1st" id = "KeyB">Բ</li>
+                        <li class = "pointer2nd" id = "KeyN">Ն</li>
+                        <li class = "pointer2nd" id = "KeyM">Մ</li>
+                        <li class = "middle2" id = "Comma">,</li>
+                        <li class = "ring2" id = "Period">:</li>
+                        <li class = "pinky2" id = "Slash">/</li>
+                        <li class = "pinky2" id = "ShiftRight">SHIFT</li>
+                    </ul>
+                    <img id = "figure-jumping1" width = "800px" src = "./assets/img/fingers1.png">
+                </div>
+                <div id = "typingGame" class = "game" style = "display: none">
+                    <div class = "game-part">
+                        <header>
+                            <div class = "your-score">
+                                <p>Your&nbsp;Score</p>
+                                <p>
+                                    <i class = "fa-solid fa-diamond"></i>
+                                    <span id = "score" class = "score">0</span>
+                                </p>
+                            </div>
+                            <div class = "higher-score">
+                                <p>High&nbsp;Score</p>
+                                <p>
+                                    <i class = "fa-solid fa-diamond"></i>
+                                    <span id = "highScore" class = "high-score"></span>
+                                </p>
+                            </div>
+                        </header>
+                        <div class = "word-div" >
+                            <p><span id = "loremIpsum" direction = "left" height = "60" width = "510" class = "info-text">AAAAA</span></p>
+                        </div>
+                        <div class = "input-box">
+                            <input id = "input" type = "text"   placeholder = "Start typing..."/>
+                        </div>
+                    </div>
+                    <div class = "time-div">
+                        <div class = "time-bar-div">
+                            <span class = "time-bar"></span>
+                        </div>
+                        <p><span id = "timeLeft" class = "time">60</span></p>
+                    </div>
+                </div>
+                <div id = "gameOver"  class = "center" style = "display: none">
+                    <h2>Game<span>Over</span></h2>
+                    <h2>Your Score: <span id = "yourScore"></span></h2>
+                    <button id = "playAgain" type = "button">Play Again</button> <button class = "goToMenu" type = "button">Go To Menu</button>
+                </div>
+            </div>
+        </main>
+        <audio id="welcome">
+          
+                <source src="./assets/sounds/level-passed-142971_1CTIQ7Mp (1).mp3" type="audio">
+          
+        </audio>
+        <script src = "./script.js"></script>
+    </body>
+</html>
